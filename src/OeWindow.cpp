@@ -2,23 +2,23 @@
 // Created by Sayama on 30/11/2022.
 //
 
-#include "oe_window.hpp"
+#include "OeWindow.hpp"
 #include <vulkan/vulkan.hpp>
 namespace OxymoreEngine {
 
-    OEwindow::OEwindow(int width, int height, std::string name) :
+    OeWindow::OeWindow(int width, int height, std::string name) :
     width(width),
     height(height),
     name(name) {
         initWindow();
     }
 
-    OEwindow::~OEwindow() {
+    OeWindow::~OeWindow() {
         glfwDestroyWindow(window);
         glfwTerminate();
     }
 
-    void OEwindow::initWindow() {
+    void OeWindow::initWindow() {
         // Init GLFW
         glfwInit();
 
@@ -31,7 +31,7 @@ namespace OxymoreEngine {
         this->window = glfwCreateWindow(width, height, name.c_str(), nullptr, nullptr);
     }
 
-    bool OEwindow::shouldClose() {
+    bool OeWindow::shouldClose() {
         return glfwWindowShouldClose(window);
     }
 } // OxymoreEngine

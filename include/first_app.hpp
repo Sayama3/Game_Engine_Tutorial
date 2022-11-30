@@ -4,7 +4,8 @@
 
 #pragma once
 
-#include "oe_window.hpp"
+#include "OeWindow.hpp"
+#include "OePipeline.hpp"
 
 class first_app {
 public:
@@ -13,5 +14,6 @@ public:
 
     void run();
 private:
-    OxymoreEngine::OEwindow OEwindow {WIDTH, HEIGHT, "Vulkan Window"};
+    OxymoreEngine::OeWindow OeWindow {WIDTH, HEIGHT, "Vulkan Window"};
+    OxymoreEngine::OePipeline OePipeline {"shaders/simple_shader.vert.spv", "shaders/simple_shader.frag.spv"};
 };

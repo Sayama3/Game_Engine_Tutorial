@@ -9,22 +9,22 @@
 
 namespace OxymoreEngine {
 
-    class OEwindow {
+    class OeWindow {
     public:
         /// Constructor of the Oxymore Engine Window.
         /// \param width : Window Width
         /// \param height : Window Height
         /// \param name : Window Name
-        OEwindow(int width, int height, std::string name);
+        OeWindow(int width, int height, std::string name);
 
         /// Destructor of the Oxymore Engine.
-        ~OEwindow();
+        ~OeWindow();
 
         // Removing Copy constructors.
         // If we copy the constructor and have two objects with the same reference to GLFWwindow, if one of them is destroyed,
         //  the last one would be left with a pointer to a destroyed object.
-        OEwindow(const OEwindow &) = delete;
-        OEwindow &operator=(const OEwindow &) = delete;
+        OeWindow(const OeWindow &) = delete;
+        OeWindow &operator=(const OeWindow &) = delete;
 
         /// Whether this window should be closing or not.
         /// \return True if the window should close.

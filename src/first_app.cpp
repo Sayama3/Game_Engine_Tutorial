@@ -5,7 +5,7 @@
 #include "first_app.hpp"
 
 void first_app::run() {
-    while(!this->OEwindow.shouldClose()) {
+    while(!this->OeWindow.shouldClose()) {
         glfwPollEvents();
     }
 }
