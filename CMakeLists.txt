@@ -14,10 +14,10 @@ add_definitions(-D_USE_MATH_DEFINES)
 set(CMAKE_CXX_STANDARD 20)
 
 # set the name of the executable
-add_executable(Game_Engine)
+add_executable(Oxymore_Engine)
 
 # remark the c++ version to the 20 one
-target_compile_features(Game_Engine PUBLIC cxx_std_20)
+target_compile_features(Oxymore_Engine PUBLIC cxx_std_20)
 
 # add the .hpp to the projects
 include_directories(include)
