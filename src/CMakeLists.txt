@@ -5,4 +5,5 @@ target_sources(Oxymore_Engine PRIVATE
         first_app.cpp
         OeWindow.cpp
         OePipeline.cpp
+        OeEngineDevice.cpp
 )

@@ -30,6 +30,8 @@ namespace OxymoreEngine {
         /// \return True if the window should close.
         bool shouldClose();
 
+        void createWindowSurface(VkInstance instance, VkSurfaceKHR *surface);
+
     private:
         void initWindow();
 

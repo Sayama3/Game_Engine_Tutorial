@@ -6,6 +6,7 @@
 
 #include "OeWindow.hpp"
 #include "OePipeline.hpp"
+#include "OeDevice.hpp"
 
 class first_app {
 public:
@@ -15,5 +16,11 @@ public:
     void run();
 private:
     OxymoreEngine::OeWindow OeWindow {WIDTH, HEIGHT, "Vulkan Window"};
-    OxymoreEngine::OePipeline OePipeline {"shaders/simple_shader.vert.spv", "shaders/simple_shader.frag.spv"};
+    OxymoreEngine::OeDevice OeDevice {OeWindow};
+    OxymoreEngine::OePipeline OePipeline {
+        OeDevice,
+        "shaders/simple_shader.vert.spv",
+        "shaders/simple_shader.frag.spv",
+        OxymoreEngine::OePipeline::defaultPipelineConfig(WIDTH, HEIGHT)
+    };
 };

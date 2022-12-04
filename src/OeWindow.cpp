@@ -3,7 +3,9 @@
 //
 
 #include "OeWindow.hpp"
-#include <vulkan/vulkan.hpp>
+#include <stdexcept>
+
+
 namespace OxymoreEngine {
 
     OeWindow::OeWindow(int width, int height, std::string name) :
@@ -33,5 +35,11 @@ namespace OxymoreEngine {
 
     bool OeWindow::shouldClose() {
         return glfwWindowShouldClose(window);
+    }
+
+    void OeWindow::createWindowSurface(VkInstance instance, VkSurfaceKHR *surface) {
+        if(glfwCreateWindowSurface(instance, window, nullptr, surface) != VK_SUCCESS) {
+            throw std::runtime_error("Failed to create window surface.");
+        }
     }
 } // OxymoreEngine
